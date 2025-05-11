@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Minimal Speedmeter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="speedometer-container">
+        <div class="speed-value-container">
+            <div id="speed-value" class="normal">0</div>
+            <div class="speed-unit">KM/H</div>
+        </div>
+        
+        <div class="speedometer-content">
+            <div class="speed-progress">
+                <div id="speed-progress-bar" class="normal"></div>
+            </div>
+            
+            <div class="status-bars">
+                <div class="fuel-bar">
+                    <i class="fas fa-gas-pump"></i>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="fuel-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="health-bar">
+                    <i class="fas fa-car-crash"></i>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="health-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.speedometer-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+   
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    display: none;
+    min-width: 200px; 
+}
+
+.speed-value-container {
+    display: flex;
+    align-items: baseline;
+    margin-right: 15px;
+}
+
+#speed-value {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-right: 5px;
+    min-width: 40px; 
+    text-align: right;
+}
+
+
+#speed-value.normal {
+    color: #b76cfd;
+    text-shadow: 0 0 5px rgba(183, 108, 253, 0.7);
+}
+
+#speed-value.warning {
+    color: #ffaa5e;
+    text-shadow: 0 0 5px rgba(255, 170, 94, 0.7);
+}
+
+#speed-value.danger {
+    color: #ff6b6b;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.7);
+}
+
+.speed-unit {
+    color: #d9b3ff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.speedometer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.speed-progress {
+    width: 150px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#speed-progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+
+#speed-progress-bar.normal {
+    background: linear-gradient(90deg, #9d50ff, #6a00ff);
+}
+
+#speed-progress-bar.warning {
+    background: linear-gradient(90deg, #ff9a56, #ff6b00);
+}
+
+#speed-progress-bar.danger {
+    background: linear-gradient(90deg, #ff5e5e, #ff0000);
+}
+
+.status-bars {
+    display: flex;
+    gap: 10px;
+}
+
+.fuel-bar, .health-bar {
+    display: flex;
+    align-items: center;
+}
+
+.fuel-bar i {
+    color: #ff9a00;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.health-bar i {
+    color: #ff3366;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.bar-container {
+    width: 50px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+#fuel-fill {
+    background: linear-gradient(90deg, #ff9a00, #ffcc00);
+}
+
+#health-fill {
+    background: linear-gradient(90deg, #ff3366, #ff0066);
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 5px currentColor; }
+    50% { text-shadow: 0 0 10px currentColor; }
+    100% { text-shadow: 0 0 5px currentColor; }
+}
+
+.high-speed {
+    animation: pulse 0.5s infinite;
+}
